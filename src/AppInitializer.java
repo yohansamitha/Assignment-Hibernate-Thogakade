@@ -2,8 +2,16 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lk.ijse.hibernate.entity.Customer;
+import lk.ijse.hibernate.entity.Item;
+import lk.ijse.hibernate.entity.Orders;
+import lk.ijse.hibernate.util.FactoryConfiguration;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.io.IOException;
+import java.sql.Date;
+import java.util.ArrayList;
 
 public class AppInitializer extends Application {
 
@@ -13,7 +21,7 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        /*Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
         Customer customer = new Customer();
@@ -70,11 +78,11 @@ public class AppInitializer extends Application {
         session.save(order);
 
         transaction.commit();
-        session.close();*/
+        session.close();
 
-        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("lk/ijse/hibernate/view/dashBoardForm.fxml"))));
-        primaryStage.setTitle("Thogakade");
-        primaryStage.centerOnScreen();
-        primaryStage.show();
+//        primaryStage.setScene(new Scene(FXMLLoader.load(this.getClass().getResource("lk/ijse/hibernate/view/dashBoardForm.fxml"))));
+//        primaryStage.setTitle("Thogakade");
+//        primaryStage.centerOnScreen();
+//        primaryStage.show();
     }
 }
